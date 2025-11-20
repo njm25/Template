@@ -1,0 +1,29 @@
+{
+    "name": "Template",
+    "version": "1.0.0",
+    "description": "A basic template for a full-stack application",
+    "main": "index.js",
+    "scripts": {
+      "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+      "dev:server": "cd server && npm run dev",
+      "dev:client": "cd client && npm run dev",
+      "build": "npm run build:server && npm run build:client",
+      "build:server": "cd server && npm install",
+      "build:client": "cd client && npm run build",
+      "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+      "start:server": "cd server && npm start",
+      "start:client": "cd client && npm start",
+      "start:prod": "concurrently \"npm run start:server:prod\" \"npm run start:client:prod\"",
+      "start:server:prod": "cd server && npm start",
+      "start:client:prod": "cd client && npm start",
+      "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+      "clean": "rm -rf node_modules server/node_modules client/node_modules",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.2"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+  
