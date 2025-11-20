@@ -1,0 +1,45 @@
+name: Deploy on VPS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install sshpass
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y sshpass
+
+      - name: Preflight - can reach SSH port?
+        env:
+          SSH_HOST: 62.72.26.24
+          SSH_PORT: 22
+        run: |
+          set -euo pipefail
+          H="$SSH_HOST"
+          P="${SSH_PORT:-22}"
+          echo "Checking TCP connectivity to $H:$P ..."
+          # /dev/tcp works on the runner’s bash
+          timeout 5 bash -c "cat < /dev/null > /dev/tcp/$H/$P" \
+            && echo "OK: TCP connect succeeded" \
+            || (echo "ERROR: cannot reach $H:$P (firewall/closed port)"; exit 1)
+
+      - name: Run deploy.sh on VPS
+        env:
+          SSH_HOST: 62.72.26.24
+          SSH_USER: root
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          set -euxo pipefail
+          H="$SSH_HOST"
+          U="$SSH_USER"
+          PW="$SSH_PASSWORD"
+          P="${SSH_PORT:-22}"
+
+          # -vvv for detailed auth/handshake logs
+          sshpass -p "$PW" ssh -vvv -p "$P" -o StrictHostKeyChecking=no \
+            "$U@$H" 'cd /root/Template/server && git stash && git pull && chmod +x ./deploy.sh && ./deploy.sh'
