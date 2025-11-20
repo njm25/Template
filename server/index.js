@@ -26,7 +26,7 @@ app.get("/error", (req, res) => {
 });
 
 app.get("/secret", (req, res) => {
-  res.status(200).send("Secret");
+  res.status(200).send("This is a secret!!!!");
 });
 
 const PORT = process.env.PORT;
