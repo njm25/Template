@@ -3,6 +3,10 @@
 import { ToastContainer } from 'react-toastify';
 
 export default function ToastProvider() {
-  return <ToastContainer />;
+  return <ToastContainer 
+    theme = 'dark'
+    closeOnClick = { true }
+    closeButton = { false }
+  />;
 }
 
