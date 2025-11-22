@@ -7,6 +7,7 @@ export default function ToastProvider() {
     theme = 'dark'
     closeOnClick = { true }
     closeButton = { false }
+    pauseOnFocusLoss = { false }
   />;
 }
 
