@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ToastProvider from "@/providers/ToastProvider";
+import NavBar from "@/components/navBar";
 
 export const metadata: Metadata = {
   title: "njm25 Template",
@@ -15,7 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <NavBar />
+        <main className="pt-4 px-120">{children}</main>
         <ToastProvider />
       </body>
     </html>

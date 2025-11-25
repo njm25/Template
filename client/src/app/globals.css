@@ -3,16 +3,16 @@
 
 /* MAIN */
 :root {
-  --background: #000000;
-  --alt-background: #111111;   
+  --background-primary: #1a1a1a;
+  --background-secondary: #2d2d2d;   
   --foreground: #ffffff;
 
   --primary: #00377e;
-  --alt-primary: #002d67;
+  --secondary: #002d67;
 }
 
 body {
-  background: var(--background);
+  background: var(--background-primary);
   color: var(--foreground);
 
   button {
@@ -20,11 +20,15 @@ body {
   }
   button:hover{
     cursor: pointer;
-    background-color: var(--alt-primary);
+    background-color: var(--secondary);
   }
 }
 
 /* TOASTIFY */
 .Toastify__toast {
-  background-color: var(--alt-background);
+  background-color: var(--background-secondary);
+}
+
+.background-secondary {
+  background-color: var(--background-secondary);
 }
