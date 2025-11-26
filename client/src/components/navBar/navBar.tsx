@@ -26,9 +26,7 @@ export default function NavBar() {
 
       <TopNav navItems={navItems} toggleSideNav={toggleSideNav} />
 
-      {isOpen && 
-        <SideNav navItems={navItems} toggleSideNav={toggleSideNav} />
-      }
+      <SideNav navItems={navItems} toggleSideNav={toggleSideNav} isOpen={isOpen}  />
 
     </nav>
   )
