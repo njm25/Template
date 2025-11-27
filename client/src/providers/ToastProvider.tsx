@@ -19,8 +19,7 @@ export default function ToastProvider() {
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
         lineHeight: '1.2',
-        minWidth: '200px',
-        maxWidth: '200px',
+        width: '200px',
       }}
       style={{
         marginTop: '64px',
