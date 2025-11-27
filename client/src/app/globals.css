@@ -34,8 +34,11 @@ body {
 /* TOASTIFY */
 .Toastify__toast {
   background-color: var(--background-secondary);
+  overflow-y: auto;
 }
-
+[class*="Toastify"] {
+  max-height: 20px !important;
+}
 .background-secondary {
   background-color: var(--background-secondary);
 }

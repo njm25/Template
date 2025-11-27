@@ -8,7 +8,7 @@ interface ResponseBoxProps {
 
 export default function ResponseBox({ text, buttonLabel, buttonOnClick }: ResponseBoxProps  ) {
   return (  
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-start justify-start">
       <p className="text-center">{text}</p>
       <Button message={buttonLabel} onClick={async () => await buttonOnClick()} />
     </div>
