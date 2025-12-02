@@ -67,22 +67,3 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
 - **NEXT_PUBLIC_API_URL** - The base URL for all API requests made from the client application. The `NEXT_PUBLIC_` prefix is required in Next.js to expose the variable to the browser-side code.
-
-## Optional Configuration
-
-### Step 6: Create Example Files
-
-If you want to share the environment variable structure with your team without exposing actual values, create `.env.example` files:
-
-**Server example file** (`server/.env.example`):
-```env
-PORT=3001
-CLIENT_URL=http://localhost:3000
-```
-
-**Client example file** (`client/.env.example`):
-```env
-NEXT_PUBLIC_API_URL=http://localhost:3001
-```
-
-These example files can be safely committed to version control and serve as templates for other developers.
