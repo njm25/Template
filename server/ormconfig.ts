@@ -17,10 +17,3 @@ export default new DataSource({
   migrations: ["src/migrations/**/*.ts"],
   subscribers: ["src/subscribers/**/*.ts"],
 });
-console.log('DB CONFIG RUNTIME CHECK', {
-	host: process.env.DB_HOST,
-	port: process.env.DB_PORT,
-	username: process.env.DB_USERNAME,
-	password: process.env.DB_PASSWORD,
-	database: process.env.DB_NAME,
-});
