@@ -38,7 +38,7 @@ body {
   overflow-y: auto;
 }
 [class*="Toastify"] {
-  min-height: 20px !important;
+  max-height: 20px !important;
 }
 .background-secondary {
   background-color: var(--background-secondary);
