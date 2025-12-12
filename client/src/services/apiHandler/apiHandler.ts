@@ -16,7 +16,10 @@ apiHandler.interceptors.response.use(
     return response;
 },
   (error) => {
-    toast.error(error.response.data);
+    toast.error(error.response.data.error);
+    if (error.response.status !== 200) {
+      return Promise.reject(error);
+    }
     return error.response.data;
   }
 );

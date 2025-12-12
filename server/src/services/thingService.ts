@@ -19,6 +19,28 @@ export class ThingService extends BaseService {
         });
         this.app.post("/thing/create", async (req, res) => {
             const { name, description } = req.body;
+            if (!name || !description) {
+                return res.status(400).json({ error: "Name and description are required" });
+            }
+            if (name.length > 25) {
+                return res.status(400).json({ error: "Name must be less than 25 characters" });
+            }
+            if (description.length > 255) {
+                return res.status(400).json({ error: "Description must be less than 255 characters" });
+            }
+            if (name.length < 1) {
+                return res.status(400).json({ error: "Name must be at least 1 character" });
+            }
+            if (description.length < 1) {
+                return res.status(400).json({ error: "Description must be at least 1 character" });
+            }
+            if (name.trim() === "") {
+                return res.status(400).json({ error: "Name must be at least 1 character" });
+            }
+            if (description.trim() === "") {
+                return res.status(400).json({ error: "Description must be at least 1 character" });
+            }
+            
             const thing = await AppDataSource.getRepository(Thing).create({ name, description });
             await AppDataSource.getRepository(Thing).save(thing);
             res.json(thing);

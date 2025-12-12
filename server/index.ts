@@ -8,11 +8,8 @@ dotenv.config();
 
 const app = express();
 
-AppDataSource.initialize().then(async () => {
-  await registerServices(app);
-}).catch((error: any) => {
-  console.error("Error during Data Source initialization", error);
-});
+// Parse JSON bodies
+app.use(express.json());
 
 // Enable CORS for all routes
 app.use(cors({
@@ -22,8 +19,11 @@ app.use(cors({
   credentials: true
 }));
 
-// Parse JSON bodies
-app.use(express.json());
+AppDataSource.initialize().then(async () => {
+  await registerServices(app);
+}).catch((error: any) => {
+  console.error("Error during Data Source initialization", error);
+});
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running on port ${process.env.PORT || 3000}`);

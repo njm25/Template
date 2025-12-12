@@ -4,7 +4,7 @@ import { BaseService } from "../core/baseService.ts";
 export class AboutService extends BaseService {
 	protected registerRoutes(): void {
 		this.app.get("/about/error", (req: Request, res: Response) => {
-			res.status(500).send("Error");
+			res.status(500).json({ error: "Error" });
 		});
 
 		this.app.get("/about/secret", (req: Request, res: Response) => {
