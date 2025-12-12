@@ -1,13 +1,17 @@
 import { Thing } from "../entities/Thing.ts";
 import { BaseService } from "../core/baseService.ts";
 import { AppDataSource } from "../../data-source.ts";
+import { createQueryBuilder } from "typeorm";
 
 export class ThingService extends BaseService {
 
     protected registerRoutes(): void {
         this.app.get("/thing/random", async (req, res) => {
-            const maxId = await AppDataSource.getRepository(Thing).count();
-            const thing = await AppDataSource.getRepository(Thing).findOne({ where: { id: Math.floor(Math.random() * maxId) + 1 } });
+            const thing = await AppDataSource.getRepository(Thing)
+            .createQueryBuilder("thing")
+            .orderBy("RAND()")
+            .limit(1)
+            .getOne();
             res.json(thing);
         });
         this.app.get("/thing/recent20", async (req, res) => {
