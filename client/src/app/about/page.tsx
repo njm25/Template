@@ -1,6 +1,6 @@
-import GetErrorResponse from "@/components/getErrorResponse";
-import GetSecretResponse from "@/components/getSecretResponse";
-import GetThingsResponse from "@/components/getThingResponse";
+import GetErrorResponse from "@/components/responseBoxes/getErrorResponse";
+import GetSecretResponse from "@/components/responseBoxes/getSecretResponse";
+import GetThingsResponse from "@/components/responseBoxes/getThingResponse";
 export default function About() {
   return (
     <div >

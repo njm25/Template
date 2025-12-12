@@ -1,6 +1,6 @@
 'use client'
-import { getError } from "@/services/apiHandler/api/templateHandler"
-import ResponseBox from "./core/responseBox"
+import { getError } from "@/services/apiHandler/api/aboutHandler"
+import ResponseBox from "../core/responseBox"
 
 export default function GetErrorResponse() {
  

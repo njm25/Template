@@ -1,6 +1,6 @@
 'use client'
-import { getSecret } from "@/services/apiHandler/api/templateHandler"
-import ResponseBox from "./core/responseBox"
+import { getSecret } from "@/services/apiHandler/api/aboutHandler"
+import ResponseBox from "../core/responseBox"
 
 export default function GetSecretResponse() {
   return (

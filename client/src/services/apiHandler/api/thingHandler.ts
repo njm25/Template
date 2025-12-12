@@ -1,8 +1,16 @@
-import { toast } from "react-toastify";
 import apiHandler from "../../apiHandler/apiHandler";
 
-export const getThings = async () => {
-  const response = await apiHandler.get("/things");
-  toast.success(response.data[0].name);
-  return response.data[0].name;
+export const getRandomThing = async () => {
+  const response = await apiHandler.get("/thing/random");
+  return response.data;
+};
+
+export const getRecent20Things = async () => {
+  const response = await apiHandler.get("/thing/recent20");
+  return response.data;
+};
+
+export const createThing = async (name: string, description: string) => {
+  const response = await apiHandler.post("/thing/create", { name, description });
+  return response.data;
 };
