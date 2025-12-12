@@ -1,7 +1,6 @@
 import { Thing } from "../entities/Thing.ts";
 import { BaseService } from "../core/baseService.ts";
 import { AppDataSource } from "../../data-source.ts";
-import { createQueryBuilder } from "typeorm";
 
 export class ThingService extends BaseService {
 
