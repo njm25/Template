@@ -113,3 +113,16 @@ button:focus-visible {
   max-height: 70vh;
   overflow: auto;
 }
+
+/* SIDENAV */
+.sidenav-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 9998;
+}
+
+.sidenav-panel {
+	background-color: var(--background-secondary);
+	border-right: 1px solid rgba(255, 255, 255, 0.12);
+	z-index: 9999;
+}
