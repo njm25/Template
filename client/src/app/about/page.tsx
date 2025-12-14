@@ -4,7 +4,7 @@ import GetThingsResponse from "@/components/responseBoxes/getThingResponse";
 
 export default function About() {
 	return (
-		<div className="py-6">
+		<div>
 			<div className="space-y-1">
 				<h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
 					About

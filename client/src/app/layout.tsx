@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NavBar />
-          <main className="pt-4 px-6 md:px-12 lg:px-60 xl:px-100">{children}</main>
+          <main className="py-6 px-6 md:px-12 lg:px-60 xl:px-100">{children}</main>
         <ToastProvider />
       </body>
     </html>

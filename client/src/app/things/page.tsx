@@ -26,7 +26,7 @@ export default function Things() {
 	}
 
 	return (
-		<div className="py-6">
+		<div>
 			<div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
 				<div className="space-y-1">
 					<h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
