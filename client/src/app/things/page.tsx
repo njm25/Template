@@ -33,7 +33,7 @@ export default function Things() {
 						Things
 					</h1>
 					<p className="text-sm sm:text-base text-gray-300">
-						Most recent 20 things.
+						Most recent 20 things
 					</p>
 				</div>
 

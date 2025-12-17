@@ -24,7 +24,7 @@ export default function Home() {
           Welcome to my page about things!!
         </h1>
         <p className="text-sm sm:text-base text-gray-300">
-          Here’s a random thing:
+          Here’s a random thing
         </p>
       </div>
 
