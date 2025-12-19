@@ -10,7 +10,7 @@ export default function TopNav({ navItems, toggleSideNav }: TopNavProps) {
   return (
     <div 
       className="
-        background-secondary drop-shadow-md 
+        gradient-background drop-shadow-md 
         flex justify-between items-center flex-row-reverse sm:flex-row
         w-full py-4 px-4 md:px-8 lg:px-16 xl:px-80 
       "

@@ -126,3 +126,12 @@ button:focus-visible {
 	border-right: 1px solid rgba(255, 255, 255, 0.12);
 	z-index: 9999;
 }
+
+
+.gradient-background {
+  background: linear-gradient(
+    to top, 
+    color-mix(in srgb, var(--background-secondary) 90%, black 40%),
+    var(--background-secondary)
+  );
+}
