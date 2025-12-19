@@ -6,11 +6,7 @@ export class ThingService extends BaseService {
 
     protected registerRoutes(): void {
         this.app.get("/thing/random", async (req, res) => {
-            const thing = await AppDataSource.getRepository(Thing)
-                .createQueryBuilder("thing")
-                .orderBy("RAND()")
-                .limit(1)
-                .getOne();
+            const thing = await this.getRandomThing();
             res.json(thing);
         });
         this.app.get("/thing/recent20", async (req, res) => {
@@ -45,6 +41,18 @@ export class ThingService extends BaseService {
             await AppDataSource.getRepository(Thing).save(thing);
             res.json(thing);
         });
+    }
+
+    public async getRandomThing(): Promise<Thing> {
+        const thing = await AppDataSource.getRepository(Thing)
+        .createQueryBuilder("thing")
+        .orderBy("RAND()")
+        .limit(1)
+        .getOne();
+        if (!thing) {
+            throw new Error("No thing found");
+        }
+        return thing;
     }
 
 }

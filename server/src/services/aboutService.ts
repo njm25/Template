@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { BaseService } from "../core/services/baseService.ts";
+import { ThingService } from "./thingService.ts";
 
 const secrets = [
 	"Shhh super secret!!!",
@@ -17,8 +18,10 @@ export class AboutService extends BaseService {
 			res.status(500).json({ error: "Error" });
 		});
 
-		this.app.get("/about/secret", (req: Request, res: Response) => {
-			res.status(200).send(secrets[Math.floor(Math.random() * secrets.length)]);
+		this.app.get("/about/secret", async (req: Request, res: Response) => {
+			const thing = await this.services.get(ThingService).getRandomThing();
+			console.log("thing", thing);
+			res.status(200).send(secrets[Math.floor(Math.random() * secrets.length)] + " " + thing.name);
 		});
 	}
 }
