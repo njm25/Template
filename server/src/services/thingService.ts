@@ -1,5 +1,5 @@
 import { Thing } from "../entities/Thing.ts";
-import { BaseService } from "../core/baseService.ts";
+import { BaseService } from "../core/services/baseService.ts";
 import { AppDataSource } from "../../data-source.ts";
 
 export class ThingService extends BaseService {
@@ -7,10 +7,10 @@ export class ThingService extends BaseService {
     protected registerRoutes(): void {
         this.app.get("/thing/random", async (req, res) => {
             const thing = await AppDataSource.getRepository(Thing)
-            .createQueryBuilder("thing")
-            .orderBy("RAND()")
-            .limit(1)
-            .getOne();
+                .createQueryBuilder("thing")
+                .orderBy("RAND()")
+                .limit(1)
+                .getOne();
             res.json(thing);
         });
         this.app.get("/thing/recent20", async (req, res) => {

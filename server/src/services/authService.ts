@@ -1,8 +1,8 @@
 import { AppDataSource } from "../../data-source.ts";
-import { BaseService } from "../core/baseService.ts";
+import { BaseService } from "../core/services/baseService.ts";
 import { User } from "../entities/User.ts";
 import { compare, hash } from "bcrypt-ts";
-import SystemMessage from "../core/systemMessage.ts";
+import SystemMessage from "../core/systemMessage/systemMessage.ts";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 

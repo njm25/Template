@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { BaseService } from "../core/baseService.ts";
+import { BaseService } from "../core/services/baseService.ts";
 
 const secrets = [
 	"Shhh super secret!!!",

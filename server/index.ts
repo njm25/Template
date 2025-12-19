@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { AppDataSource } from "./data-source.ts";
-import { registerServices } from "./src/core/serviceLoader.ts";
+import { registerServices } from "./src/core/services/serviceLoader.ts";
 import session from "express-session";
 import MySQLSession from "express-mysql-session";
 import passport from "passport";
