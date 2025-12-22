@@ -21,7 +21,7 @@ export default function Home() {
     <div>
       <div className="space-y-1">
         <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-          Welcome to my page about things!!
+          Welcome to my page about things!!!
         </h1>
         <p className="text-sm sm:text-base text-gray-300">
           Here’s a random thing
