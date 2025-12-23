@@ -6,7 +6,7 @@ export interface ThingProps {
 
 export default function Thing({ thing }: ThingProps) {
   return (
-<div className="mt-10 w-full background-secondary rounded-md p-10 lg:p-20 md:p-15 sm:p-10">
+<div className="mt-10 w-full gradient-background rounded-md p-10 lg:p-20 md:p-15 sm:p-10">
     <div className="flex flex-col gap-4">
         <div>
             <p className="text-xs uppercase tracking-wide text-gray-400">
